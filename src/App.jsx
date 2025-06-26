@@ -14,40 +14,44 @@ function App() {
 
     return (
         <>
-            <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 font-sans relative overflow-hidden">
-                {/* Background decorative elements */}
+            <div className="min-h-screen bg-gradient-dark font-sans relative overflow-hidden">
+                {/* Background geometric patterns */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-emerald-200/20 to-blue-200/20 rounded-full animate-pulse"></div>
-                    <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-purple-200/20 to-emerald-200/20 rounded-full animate-pulse"></div>
+                    <div className="absolute top-20 right-20 w-64 h-64 border border-primary/20 rounded-3xl rotate-45 animate-float"></div>
+                    <div className="absolute bottom-20 left-20 w-80 h-80 border border-secondary/20 rounded-full"></div>
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-primary/10 rounded-2xl rotate-12 animate-pulse-glow"></div>
                 </div>
 
-                <header className="relative glass shadow-xl rounded-b-3xl animate-slide-up">
-                    <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col items-center">
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 tracking-tight mb-2 drop-shadow-lg animate-fade-in">
-                            Praktikum Susulan - Pertemuan 12
+                <header className="relative bg-surface/90 backdrop-blur-sm shadow-dark-lg border-b border-surface-light animate-slide-up">
+                    <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col items-center">
+                        <h1 className="text-display text-transparent bg-clip-text bg-gradient-primary tracking-tight mb-4 drop-shadow-lg animate-fade-in">
+                            Praktikum Susulan
                         </h1>
-                        <div className="text-gray-600 text-lg md:text-xl mt-2 font-medium">
+                        <div className="text-h1 text-text-primary mb-3">
+                            Pertemuan 12
+                        </div>
+                        <div className="text-body-lg text-text-secondary">
                             Backend as a Service dengan Supabase
                         </div>
                     </div>
                 </header>
 
-                <nav className="relative mt-8 mx-auto max-w-lg animate-fade-in">
-                    <div className="glass rounded-2xl shadow-2xl p-1">
-                        <div className="flex space-x-1">
+                <nav className="relative mt-10 mx-auto max-w-2xl animate-fade-in">
+                    <div className="bg-surface/80 backdrop-blur-sm rounded-3xl shadow-dark-lg border border-surface-light p-2">
+                        <div className="flex space-x-2">
                             {tabs.map((tab) => {
                                 const Icon = tab.icon
                                 return (
                                     <button
                                         key={tab.id}
                                         onClick={() => setActiveTab(tab.id)}
-                                        className={`flex items-center px-6 py-3 rounded-xl text-base font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 ${
+                                        className={`flex items-center px-8 py-4 rounded-2xl text-h4 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background ${
                                             activeTab === tab.id
-                                                ? 'bg-gradient-to-r from-emerald-500 to-blue-500 text-white shadow-lg transform scale-105'
-                                                : 'text-gray-600 hover:bg-white/50 hover:text-gray-800'
+                                                ? 'bg-gradient-primary text-black shadow-glow transform scale-105'
+                                                : 'text-text-secondary hover:bg-surface-light hover:text-text-primary'
                                         }`}
                                     >
-                                        <Icon className="mr-2 text-lg" />
+                                        <Icon className="mr-3 text-xl" />
                                         {tab.label}
                                     </button>
                                 )
@@ -63,22 +67,25 @@ function App() {
                     </div>
                 </main>
 
-                <footer className="relative glass rounded-t-3xl shadow-2xl py-8 mt-20 animate-fade-in">
-                    <div className="max-w-5xl mx-auto px-6 text-center">
-                        <p className="text-gray-700 font-bold text-lg mb-2">
+                <footer className="relative bg-surface/90 backdrop-blur-sm border-t border-surface-light shadow-dark-lg py-10 mt-20 animate-fade-in">
+                    <div className="max-w-6xl mx-auto px-6 text-center">
+                        <div className="flex justify-center mb-6">
+                            <div className="h-1 w-20 bg-gradient-primary rounded-full"></div>
+                        </div>
+                        <p className="text-h3 text-text-primary mb-3">
                             Praktikum Susulan - Pertemuan 12
                         </p>
-                        <p className="text-gray-500 text-base mb-4">
+                        <p className="text-body-lg text-text-secondary mb-8">
                             Backend as a Service (BaaS) menggunakan React dan Supabase
                         </p>
-                        <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
-                            <span className="flex items-center gap-1">
-                                📁 Repository: tid-2355301017-praksul-apps
+                        <div className="flex flex-wrap justify-center gap-6">
+                            <span className="flex items-center gap-2 bg-surface-light px-4 py-3 rounded-xl text-body-sm text-text-tertiary">
+                                📁 Repository: tid-2355301125-praksul-apps
                             </span>
-                            <span className="flex items-center gap-1">
+                            <span className="flex items-center gap-2 bg-surface-light px-4 py-3 rounded-xl text-body-sm text-text-tertiary">
                                 🗄️ Database: Supabase PostgreSQL
                             </span>
-                            <span className="flex items-center gap-1">
+                            <span className="flex items-center gap-2 bg-surface-light px-4 py-3 rounded-xl text-body-sm text-text-tertiary">
                                 🚀 Deployment: Vercel
                             </span>
                         </div>

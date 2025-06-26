@@ -5,11 +5,11 @@ export default function EmptyState({ text = "Belum ada data", actionText, onActi
     const [isHovered, setIsHovered] = useState(false)
 
     return (
-        <div className="flex flex-col items-center justify-center py-20 px-8 animate-fade-in">
+        <div className="flex flex-col items-center justify-center py-24 px-8 animate-fade-in relative">
             {/* Animated illustration */}
-            <div className="relative mb-8">
+            <div className="relative mb-10">
                 {/* Background decoration */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-emerald-100 via-blue-100 to-purple-100 rounded-full opacity-50 animate-pulse"></div>
+                <div className="absolute -inset-6 bg-gradient-primary/10 rounded-full opacity-50 animate-pulse"></div>
                 
                 {/* Main icon */}
                 <div 
@@ -17,34 +17,34 @@ export default function EmptyState({ text = "Belum ada data", actionText, onActi
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
-                    <div className="w-24 h-24 bg-gradient-to-br from-emerald-400 to-blue-500 rounded-3xl flex items-center justify-center shadow-2xl">
-                        <BsDatabaseExclamation className="text-4xl text-white" />
+                    <div className="w-28 h-28 bg-gradient-primary rounded-3xl flex items-center justify-center shadow-glow">
+                        <BsDatabaseExclamation className="text-5xl text-white" />
                     </div>
                     
                     {/* Floating decorative elements */}
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center animate-bounce">
-                        <BsStars className="text-white text-xs" />
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-secondary rounded-full flex items-center justify-center animate-bounce shadow-glow">
+                        <BsStars className="text-white text-sm" />
                     </div>
-                    <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse"></div>
+                    <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-cyan-400 rounded-full animate-pulse"></div>
                 </div>
             </div>
             
             {/* Content */}
-            <div className="text-center space-y-4 max-w-md">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">
+            <div className="text-center space-y-6 max-w-lg">
+                <h3 className="text-h1 text-text-primary mb-3">
                     Oops! Kosong Nih 📭
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-lg">
+                <p className="text-body-lg text-text-secondary leading-relaxed">
                     {text}
                 </p>
                 
                 {/* Suggestions */}
-                <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-emerald-50 rounded-2xl border border-blue-100">
-                    <div className="flex items-center justify-center gap-2 mb-3">
-                        <BsFileText className="text-emerald-500" />
-                        <span className="text-sm font-semibold text-gray-700">Saran untuk Anda:</span>
+                <div className="mt-8 p-8 bg-surface backdrop-blur-sm rounded-3xl border border-surface-light shadow-dark">
+                    <div className="flex items-center justify-center gap-3 mb-4">
+                        <BsFileText className="text-primary text-xl" />
+                        <span className="text-h4 text-text-primary">Saran untuk Anda:</span>
                     </div>
-                    <ul className="text-sm text-gray-600 space-y-1">
+                    <ul className="text-body text-text-secondary space-y-2">
                         <li>• Coba buat catatan pertama Anda</li>
                         <li>• Gunakan form di sebelah kiri</li>
                         <li>• Mulai dengan ide sederhana</li>
@@ -55,19 +55,12 @@ export default function EmptyState({ text = "Belum ada data", actionText, onActi
                 {actionText && onAction && (
                     <button
                         onClick={onAction}
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                        className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-primary hover:shadow-glow text-white text-h4 rounded-3xl transition-all duration-300 hover:scale-105 shadow-dark"
                     >
-                        <BsPlus className="text-lg" />
+                        <BsPlus className="text-2xl" />
                         {actionText}
                     </button>
                 )}
-            </div>
-            
-            {/* Background pattern */}
-            <div className="absolute inset-0 opacity-5 pointer-events-none">
-                <div className="w-full h-full" style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Ccircle cx='7' cy='7' r='1'/%3E%3Ccircle cx='27' cy='7' r='1'/%3E%3Ccircle cx='47' cy='7' r='1'/%3E%3Ccircle cx='7' cy='27' r='1'/%3E%3Ccircle cx='27' cy='27' r='1'/%3E%3Ccircle cx='47' cy='27' r='1'/%3E%3Ccircle cx='7' cy='47' r='1'/%3E%3Ccircle cx='27' cy='47' r='1'/%3E%3Ccircle cx='47' cy='47' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                }}></div>
             </div>
         </div>
     )

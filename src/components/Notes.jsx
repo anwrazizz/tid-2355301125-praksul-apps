@@ -92,37 +92,37 @@ export default function Notes() {
     return (
         <div className="max-w-7xl mx-auto p-6">
             {/* Dashboard Header */}
-            <div className="mb-8 text-center">
-                <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 mb-3 flex items-center justify-center gap-3 drop-shadow-lg">
-                    <BsFileText className="text-emerald-400 text-4xl" />
+            <div className="mb-10 text-center">
+                <h2 className="text-display text-transparent bg-clip-text bg-gradient-primary mb-4 flex items-center justify-center gap-4 drop-shadow-lg">
+                    <BsFileText className="text-primary text-5xl animate-pulse-glow" />
                     Notes Dashboard
                 </h2>
-                <p className="text-gray-600 text-lg">Kelola catatan Anda dengan mudah menggunakan BaaS Supabase</p>
+                <p className="text-body-lg text-text-secondary">Kelola catatan Anda dengan mudah menggunakan BaaS Supabase</p>
             </div>
 
             {/* Stats Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                <div className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-                    <div className="text-3xl font-bold text-emerald-600">{notes.length}</div>
-                    <div className="text-gray-600 text-sm">Total Catatan</div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+                <div className="bg-surface backdrop-blur-sm rounded-3xl p-8 text-center hover:scale-105 transition-all duration-300 border border-surface-light shadow-dark hover:shadow-glow group">
+                    <div className="text-h1 text-primary group-hover:animate-pulse-glow">{notes.length}</div>
+                    <div className="text-caption text-text-secondary mt-2">Total Catatan</div>
                 </div>
-                <div className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-                    <div className="text-3xl font-bold text-yellow-600">
+                <div className="bg-surface backdrop-blur-sm rounded-3xl p-8 text-center hover:scale-105 transition-all duration-300 border border-surface-light shadow-dark hover:shadow-glow group">
+                    <div className="text-h1 text-yellow-400 group-hover:animate-pulse-glow">
                         {notes.filter(note => note.status === 'To Do').length}
                     </div>
-                    <div className="text-gray-600 text-sm">To Do</div>
+                    <div className="text-caption text-text-secondary mt-2">To Do</div>
                 </div>
-                <div className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-                    <div className="text-3xl font-bold text-blue-600">
+                <div className="bg-surface backdrop-blur-sm rounded-3xl p-8 text-center hover:scale-105 transition-all duration-300 border border-surface-light shadow-dark hover:shadow-glow group">
+                    <div className="text-h1 text-blue-400 group-hover:animate-pulse-glow">
                         {notes.filter(note => note.status === 'On Progress').length}
                     </div>
-                    <div className="text-gray-600 text-sm">On Progress</div>
+                    <div className="text-caption text-text-secondary mt-2">On Progress</div>
                 </div>
-                <div className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-                    <div className="text-3xl font-bold text-emerald-600">
+                <div className="bg-surface backdrop-blur-sm rounded-3xl p-8 text-center hover:scale-105 transition-all duration-300 border border-surface-light shadow-dark hover:shadow-glow group">
+                    <div className="text-h1 text-secondary group-hover:animate-pulse-glow">
                         {notes.filter(note => note.status === 'Done').length}
                     </div>
-                    <div className="text-gray-600 text-sm">Completed</div>
+                    <div className="text-caption text-text-secondary mt-2">Completed</div>
                 </div>
             </div>
 
@@ -147,15 +147,15 @@ export default function Notes() {
             <div className="grid lg:grid-cols-3 gap-8">
                 {/* Form Section - Smaller width */}
                 <div className="lg:col-span-1">
-                    <div className="glass rounded-3xl p-6 shadow-2xl sticky top-6">
-                        <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-                            <BsPlus className="text-emerald-500 text-2xl" />
+                    <div className="bg-surface backdrop-blur-sm rounded-3xl p-8 shadow-dark-lg border border-surface-light sticky top-6">
+                        <h3 className="text-h2 text-text-primary mb-8 flex items-center gap-3">
+                            <BsPlus className="text-primary text-3xl animate-pulse-glow" />
                             Buat Catatan Baru
                         </h3>
 
-                        <div className="space-y-4">
+                        <div className="space-y-6">
                             <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                <label className="block text-body-sm text-text-secondary mb-3">
                                     📝 Judul
                                 </label>
                                 <input
@@ -165,12 +165,12 @@ export default function Notes() {
                                     placeholder="Masukkan judul catatan..."
                                     onChange={handleChange}
                                     disabled={loading}
-                                    className="w-full p-3 bg-white/90 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200 disabled:opacity-50"
+                                    className="w-full p-4 bg-background border-2 border-surface-light rounded-2xl text-text-primary placeholder-text-tertiary focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 disabled:opacity-50"
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                <label className="block text-body-sm text-text-secondary mb-3">
                                     📄 Konten
                                 </label>
                                 <textarea
@@ -179,13 +179,13 @@ export default function Notes() {
                                     placeholder="Tulis isi catatan di sini..."
                                     onChange={handleChange}
                                     disabled={loading}
-                                    rows="4"
-                                    className="w-full p-3 bg-white/90 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200 resize-none disabled:opacity-50"
+                                    rows="5"
+                                    className="w-full p-4 bg-background border-2 border-surface-light rounded-2xl text-text-primary placeholder-text-tertiary focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 resize-none disabled:opacity-50"
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                <label className="block text-body-sm text-text-secondary mb-3">
                                     🏷️ Status
                                 </label>
                                 <select
@@ -193,7 +193,7 @@ export default function Notes() {
                                     value={dataForm.status}
                                     onChange={handleChange}
                                     disabled={loading}
-                                    className="w-full p-3 bg-white/90 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200 disabled:opacity-50"
+                                    className="w-full p-4 bg-background border-2 border-surface-light rounded-2xl text-text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 disabled:opacity-50"
                                 >
                                     <option value="To Do">📋 To Do</option>
                                     <option value="On Progress">⏳ On Progress</option>
@@ -204,7 +204,7 @@ export default function Notes() {
                             <button
                                 onClick={handleSubmit}
                                 disabled={loading}
-                                className="w-full mt-6 px-6 py-3 bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white font-bold rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg"
+                                className="w-full mt-8 px-8 py-4 bg-gradient-primary hover:shadow-glow text-black text-h4 rounded-2xl font-bold border-2 border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105"
                             >
                                 {loading ? "🔄 Menyimpan..." : "➕ Tambah Catatan"}
                             </button>
@@ -214,10 +214,10 @@ export default function Notes() {
 
                 {/* Notes Display Section - Larger width */}
                 <div className="lg:col-span-2">
-                    <div className="glass rounded-3xl shadow-2xl overflow-hidden">
-                        <div className="px-6 py-4 border-b border-gray-200/50 bg-gradient-to-r from-emerald-50/50 to-blue-50/50">
-                            <h3 className="text-xl font-bold flex items-center gap-2 text-gray-800">
-                                <BsFileText className="text-emerald-500 text-xl" />
+                    <div className="bg-surface backdrop-blur-sm rounded-3xl shadow-dark-lg border border-surface-light overflow-hidden">
+                        <div className="px-8 py-6 border-b border-surface-light bg-gradient-to-r from-surface-light/30 to-surface/30">
+                            <h3 className="text-h2 flex items-center gap-3 text-text-primary">
+                                <BsFileText className="text-primary text-2xl animate-pulse-glow" />
                                 Daftar Catatan ({notes.length})
                             </h3>
                         </div>
@@ -234,18 +234,18 @@ export default function Notes() {
                             )}
                             
                             {!loading && notes.length > 0 && (
-                                <div className="space-y-4">
+                                <div className="space-y-6">
                                     {notes.map((note, index) => (
-                                        <div key={note.id} className="bg-gradient-to-r from-white/80 to-gray-50/80 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-gray-100">
-                                            <div className="flex justify-between items-start mb-3">
+                                        <div key={note.id} className="bg-gradient-to-r from-background to-surface-dark rounded-3xl p-8 shadow-dark-lg hover:shadow-glow transition-all duration-300 hover:scale-[1.02] border border-surface-light group">
+                                            <div className="flex justify-between items-start mb-4">
                                                 <div className="flex-1">
-                                                    <div className="flex items-center gap-3 mb-2">
-                                                        <span className="text-sm font-semibold text-gray-500">#{index + 1}</span>
-                                                        <h4 className="text-xl font-bold text-gray-800">{note.title}</h4>
+                                                    <div className="flex items-center gap-4 mb-3">
+                                                        <span className="text-caption text-primary bg-primary/20 px-3 py-1 rounded-xl">#{index + 1}</span>
+                                                        <h4 className="text-h3 text-text-primary group-hover:text-primary transition-colors">{note.title}</h4>
                                                     </div>
-                                                    <p className="text-gray-600 leading-relaxed mb-3">{note.content}</p>
+                                                    <p className="text-body text-text-secondary leading-relaxed mb-4">{note.content}</p>
                                                     <div className="flex items-center justify-between">
-                                                        <span className="text-xs text-gray-500">
+                                                        <span className="text-body-sm text-text-tertiary">
                                                             📅 {new Date(note.created_at).toLocaleDateString('id-ID', {
                                                                 weekday: 'long',
                                                                 year: 'numeric',
@@ -253,26 +253,26 @@ export default function Notes() {
                                                                 day: 'numeric'
                                                             })}
                                                         </span>
-                                                        <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold ${
+                                                        <span className={`inline-flex items-center px-4 py-2 rounded-2xl text-body-sm ${
                                                             note.status === 'Done'
-                                                                ? 'bg-emerald-100 text-emerald-700'
+                                                                ? 'bg-secondary/20 text-secondary border border-secondary/30'
                                                                 : note.status === 'On Progress'
-                                                                ? 'bg-yellow-100 text-yellow-700'
-                                                                : 'bg-gray-100 text-gray-700'
+                                                                ? 'bg-yellow-400/20 text-yellow-400 border border-yellow-400/30'
+                                                                : 'bg-text-tertiary/20 text-text-tertiary border border-text-tertiary/30'
                                                         }`}>
                                                             {note.status === 'Done' && '✅'}
                                                             {note.status === 'On Progress' && '⏳'}
                                                             {note.status === 'To Do' && '📋'}
-                                                            <span className="ml-1">{note.status}</span>
+                                                            <span className="ml-2">{note.status}</span>
                                                         </span>
                                                     </div>
                                                 </div>
                                                 <button
                                                     onClick={() => handleDelete(note.id)}
-                                                    className="ml-4 p-2 rounded-xl bg-red-100 hover:bg-red-200 text-red-600 transition-all duration-200 hover:scale-110 shadow"
+                                                    className="ml-6 p-3 rounded-2xl bg-red-500/20 hover:bg-red-500/30 text-red-400 border border-red-500/30 transition-all duration-300 hover:scale-110 shadow-dark group-hover:shadow-glow"
                                                     title="Hapus Catatan"
                                                 >
-                                                    <AiFillDelete size={18} />
+                                                    <AiFillDelete size={20} />
                                                 </button>
                                             </div>
                                         </div>

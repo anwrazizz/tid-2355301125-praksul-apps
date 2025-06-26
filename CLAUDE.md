@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a React application built with Vite that demonstrates Backend as a Service (BaaS) implementation using Supabase. It's an academic project (TID-2355301119) showcasing a Notes application with full CRUD operations.
+This is a React application built with Vite that demonstrates Backend as a Service (BaaS) implementation using Supabase. It's an academic project (TID-2355301125) showcasing a Notes application with full CRUD operations.
 
 ## Development Commands
 
@@ -53,16 +53,18 @@ Supabase table: `notes`
 - Confirmation dialogs for destructive actions
 
 ### Styling Approach
-- Tailwind CSS utility classes throughout
-- Consistent design system with emerald color scheme
-- Responsive design patterns
-- Shadow and rounded corner styling for modern UI
+- Tailwind CSS utility classes throughout with custom configuration
+- Custom color palette with emerald, blue, and purple gradients
+- Glass morphism effects with backdrop blur
+- Custom animations defined in index.css (fade-in, slide-up, pulse-glow)
+- Responsive design with mobile-first approach
 - Status-based conditional styling (badges, colors)
+- Inter font family for consistent typography
 
 ## API Integration
 
 The application connects to Supabase REST API:
-- Base URL: `https://idujyzxlslduwdhpqqsb.supabase.co/rest/v1/notes`
+- Base URL: `https://eawtaeoanogylsgejljl.supabase.co/rest/v1/notes`
 - Authentication via API key in headers
 - Standard REST operations (GET, POST, DELETE)
 - Error handling with try/catch blocks
@@ -71,9 +73,12 @@ The application connects to Supabase REST API:
 
 - API credentials are hardcoded in `notesAPI.js` for academic demonstration
 - The application uses Indonesian language in the UI
-- GenericTable component accepts flexible props for different data structures
+- GenericTable component is designed for responsive card-based layout instead of traditional tables
 - All components follow consistent naming and styling patterns
 - Loading states and error handling are implemented throughout
+- Uses modern React patterns with functional components and hooks
+- No testing framework is currently configured
+- Built with Vite for fast development and optimized builds
 # important-instruction-reminders
 Do what has been asked; nothing more, nothing less.
 NEVER create files unless they're absolutely necessary for achieving your goal.
