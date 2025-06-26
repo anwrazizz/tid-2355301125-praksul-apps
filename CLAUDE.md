@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a React application built with Vite that demonstrates Backend as a Service (BaaS) implementation using Supabase. It's a academic project (TID-2355301119) showcasing a Notes application with full CRUD operations.
+This is a React application built with Vite that demonstrates Backend as a Service (BaaS) implementation using Supabase. It's an academic project (TID-2355301119) showcasing a Notes application with full CRUD operations.
 
 ## Development Commands
 
@@ -74,3 +74,8 @@ The application connects to Supabase REST API:
 - GenericTable component accepts flexible props for different data structures
 - All components follow consistent naming and styling patterns
 - Loading states and error handling are implemented throughout
+# important-instruction-reminders
+Do what has been asked; nothing more, nothing less.
+NEVER create files unless they're absolutely necessary for achieving your goal.
+ALWAYS prefer editing an existing file to creating a new one.
+NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const API_URL = "https://idujyzxlslduwdhpqqsb.supabase.co/rest/v1/notes"
-const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlkdWp5enhsc2xkdXdkaHBxcXNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA3NjA1NTgsImV4cCI6MjA2NjMzNjU1OH0.O_7w8-PmyB5Pb_SGKLyrrcMD1Ino_CfDl2HC2ktJWbs"
+const API_URL = "https://eawtaeoanogylsgejljl.supabase.co/rest/v1/notes"
+const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVhd3RhZW9hbm9neWxzZ2VqbGpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA5MzI0NjgsImV4cCI6MjA2NjUwODQ2OH0.mC-R4DqAW3fRzOdYD4TaJKxBwgV8VfwAf6Bk1gLpQJM"
 
 const headers = {
     apikey: API_KEY,
